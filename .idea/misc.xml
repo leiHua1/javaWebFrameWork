@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/lab01" />
+    <file type="web" url="file://$PROJECT_DIR$/lab02" />
+    <file type="web" url="file://$PROJECT_DIR$/test" />
+    <file type="web" url="file://$PROJECT_DIR$/test02" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/test02/pom.xml" />
+        <option value="$PROJECT_DIR$/../../../专业课课件/java/javaweb框架/第1讲 Spring入门/springDemo01/pom.xml" />
+        <option value="$PROJECT_DIR$/lab01/pom.xml" />
+        <option value="$PROJECT_DIR$/lab02/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

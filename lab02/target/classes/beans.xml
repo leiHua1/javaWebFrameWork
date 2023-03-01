@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 配置一个singleton Bean实例 -->
+	<bean id="dept" class="personal.leihua.lab02.pojo.Dept" scope="singleton"></bean>
+
+	<!-- 配置一个prototype Bean实例 -->
+	<bean id="major" class="personal.leihua.lab02.pojo.Major" scope="prototype"></bean>
+
+	<!-- 配置一个request Bean实例 -->
+	<bean id="teacher" class="personal.leihua.lab02.pojo.Teacher" scope="singleton"></bean>
+
+
+</beans>

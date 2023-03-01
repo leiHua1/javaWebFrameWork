@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    &lt;!&ndash;1.注入系的信息：计算机系，编号为407&ndash;&gt;-->
+<!--    <bean id="dept" class="personal.leihua.lab02.pojo.Dept">-->
+<!--        <property name="deptId" value="407"></property>-->
+<!--        <property name="deptname" value="计算机系"></property>-->
+<!--    </bean>-->
+
+
+<!--    &lt;!&ndash;2.注入专业信息&ndash;&gt;-->
+<!--    &lt;!&ndash;专业代码：06，名称：计算机科学与技术专业，学费：26000&ndash;&gt;-->
+<!--    <bean id="major" class="personal.leihua.lab02.pojo.Major">-->
+<!--        <property name="deptId" value="407"></property>-->
+<!--        <property name="majorId" value="06"></property>-->
+<!--        <property name="majorName" value="计算机科学与技术"></property>-->
+<!--        <property name="tuition" value="26000"></property>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash;3.1 注入学习导师的信息，role==0&ndash;&gt;-->
+<!--    <bean id="teacher" class="personal.leihua.lab02.pojo.Teacher">-->
+<!--        <property name="deptId" value="407"></property>-->
+<!--        <property name="jobId" value="1234"></property>-->
+<!--        <property name="teacherName" value="学习导师姓名"></property>-->
+<!--        <property name="gender" value="男"></property>-->
+<!--        <property name="tel" value="123456789"></property>-->
+<!--        <property name="role" value="0"></property>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash;3.2 注入辅导员的信息，role==1&ndash;&gt;-->
+<!--    <bean id="teacher2" class="personal.leihua.lab02.pojo.Teacher">-->
+<!--        <property name="deptId" value="407"></property>-->
+<!--        <property name="jobId" value="1235"></property>-->
+<!--        <property name="teacherName" value="辅导员"></property>-->
+<!--        <property name="gender" value="男"></property>-->
+<!--        <property name="tel" value="123456781"></property>-->
+<!--        <property name="role" value="1"></property>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash;4.注入本班级的信息&ndash;&gt;-->
+<!--<bean id="class" class="personal.leihua.lab02.pojo.Class">-->
+<!--    <property name="dept" ref="dept"></property>-->
+<!--    <property name="classId" value="10"></property>-->
+<!--    <property name="className" value="web4"></property>-->
+<!--    <property name="classSurplus" value="50"></property>-->
+<!--    <property name="deptId" value="407"></property>-->
+<!--    <property name="majorId" value="06"></property>-->
+<!--    <property name="tutorId" value="1234"></property>-->
+<!--    <property name="instructorId" value="1235"></property>-->
+<!--    <property name="bz" value="备注"></property>-->
+<!--    <property name="classSize" value="50"></property>-->
+<!--    <property name="instructor" ref="teacher2"></property>-->
+<!--    <property name="tutor" ref="teacher"></property>-->
+<!--    <property name="major" ref="major"></property>-->
+<!--</bean>-->
+
+
+
+
+
+</beans>
