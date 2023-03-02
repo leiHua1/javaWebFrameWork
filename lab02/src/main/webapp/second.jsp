@@ -1,7 +1,9 @@
 <%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
 <%@ page import="personal.leihua.lab02.pojo.Dept" %>
 <%@ page import="personal.leihua.lab02.pojo.Major" %>
-<%@ page import="personal.leihua.lab02.pojo.Teacher" %><%--
+<%@ page import="personal.leihua.lab02.pojo.Teacher" %>
+<%@ page import="org.springframework.context.ApplicationContext" %>
+<%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %><%--
   Created by IntelliJ IDEA.
   User: LH
   Date: 2023/3/1

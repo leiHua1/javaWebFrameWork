@@ -9,6 +9,4 @@
 
 	<!-- 配置一个request Bean实例 -->
 	<bean id="teacher" class="personal.leihua.lab02.pojo.Teacher" scope="singleton"></bean>
-
-
 </beans>

@@ -3,7 +3,9 @@
 <%@ page import="personal.leihua.lab02.pojo.Major" %>
 <%@ page import="personal.leihua.lab02.pojo.Teacher" %>
 <%@ page import="org.springframework.context.ApplicationContext" %>
-<%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %><%--
+<%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
+
+<%--
   Created by IntelliJ IDEA.
   User: LH
   Date: 2023/3/1
