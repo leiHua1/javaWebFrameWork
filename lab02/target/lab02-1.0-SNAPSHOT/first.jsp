@@ -3,7 +3,8 @@
 <%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
 <%@ page import="personal.leihua.lab02.pojo.Dept" %>
 <%@ page import="personal.leihua.lab02.pojo.Major" %>
-<%@ page import="personal.leihua.lab02.pojo.Teacher" %><%--
+<%@ page import="personal.leihua.lab02.pojo.Teacher" %>
+<%@ page import="org.springframework.web.context.WebApplicationContext" %><%--
   Created by IntelliJ IDEA.
   User: LH
   Date: 2023/3/1
@@ -17,8 +18,9 @@
 </head>
 <body>
 <%
+    // spring 默认扫描的是applicationContext.xml，如果该文件不Import bean.xml文件，则bean文件不起作用
     ApplicationContext ac2 = WebApplicationContextUtils.getWebApplicationContext(application);
-    //ClassPathXmlApplicationContext ac2 = new ClassPathXmlApplicationContext("beans.xml");
+    //ClassPathXmlApplicationContext ac2 = new ClassPathXmlApplicationContext("classpath:beans.xml");
     Object s1 = ac2.getBean(Dept.class);
     Object  p1= ac2.getBean(Major.class);
     Object  r1= ac2.getBean(Teacher.class);

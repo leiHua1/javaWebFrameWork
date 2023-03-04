@@ -55,6 +55,8 @@
 <!--    <property name="major" ref="major"></property>-->
 <!--</bean>-->
 
+<!--    跑第一题时去掉-->
+    <import resource="beans.xml"></import>
 
 
 

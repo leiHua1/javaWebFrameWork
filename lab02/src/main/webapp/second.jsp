@@ -18,8 +18,8 @@
 <body>
 <%
 
-    //ApplicationContext ac2 = WebApplicationContextUtils.getWebApplicationContext(application);
-    ClassPathXmlApplicationContext ac2 = new ClassPathXmlApplicationContext("beans.xml");
+    ApplicationContext ac2 = WebApplicationContextUtils.getWebApplicationContext(application);
+    //ClassPathXmlApplicationContext ac2 = new ClassPathXmlApplicationContext("classpath:beans.xml");
 
     Object s1 = ac2.getBean(Dept.class);
     Object  p1= ac2.getBean(Major.class);
