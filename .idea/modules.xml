@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/lab01/lab01.iml" filepath="$PROJECT_DIR$/lab01/lab01.iml" />
       <module fileurl="file://$PROJECT_DIR$/lab02/lab02.iml" filepath="$PROJECT_DIR$/lab02/lab02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab03/lab03.iml" filepath="$PROJECT_DIR$/lab03/lab03.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../专业课课件/java/javaweb框架/第1讲 Spring入门/springDemo01/springDemo01.iml" filepath="$PROJECT_DIR$/../../../专业课课件/java/javaweb框架/第1讲 Spring入门/springDemo01/springDemo01.iml" />
       <module fileurl="file://$PROJECT_DIR$/test02/test02.iml" filepath="$PROJECT_DIR$/test02/test02.iml" />
     </modules>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c">
+
+
+    <util:list id="majorsList" >
+        <ref bean="major"></ref>
+    </util:list>
+    <bean id="dept" class="cn.edu.seig.Dept"
+    p:deptId="407" p:deptname="计算机系"  p:majors-ref="majorsList">
+    </bean>
+
+
+    <util:map id="classsMap" value-type="cn.edu.seig.Class">
+        <entry key="k1" value-ref="c"></entry>
+    </util:map>
+    <bean id="major" class="cn.edu.seig.Major"
+    c:_0="06" c:_1="计算机科学与技术" c:_2="407" c:_3="26000" c:_4-ref="classsMap">
+    </bean>
+
+    <util:properties id="properties" location="test.properties"></util:properties>
+    <bean id="c" class="cn.edu.seig.Class" c:teacherProp-ref="properties">
+        <!--（1）以Setter方式注入班级的编号、名称、人数和剩余人数信息-->
+        <property name="classId" value="10"></property>
+        <property name="className" value="web4"></property>
+        <property name="classSurplus" value="50"></property>
+        <property name="deptId" value="407"></property>
+        <property name="majorId" value="06"></property>
+        <property name="bz" value="备注"></property>
+        <property name="classSize" value="50"></property>
+        <!--（2）以对象引用方式注入班级所在系、专业、以及指导老师和辅导员信息-->
+        <!--循环依赖问题 -->
+        <!--       <constructor-arg name="major" ref="major1"></constructor-arg>-->
+        <!--       <constructor-arg name="dept" ref="dept"></constructor-arg>-->
+
+        <!--注入Properties集合的指导老师和辅导员信息-->
+
+
+    </bean>
+
+</beans>
