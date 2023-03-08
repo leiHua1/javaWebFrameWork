@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context
        https://www.springframework.org/schema/context/spring-context.xsd"
 
@@ -20,7 +19,7 @@
 
     <!--2.以构造器方式，注入专业信息-->
     <!--专业代码：06，名称：计算机科学与技术专业，学费：26000-->
-    <bean id="major1" class="cn.edu.seig.Major">
+    <bean id="major1" class="cn.edu.seig.Major" >
         <constructor-arg name="majorId" value="06"></constructor-arg>
         <constructor-arg name="majorName" value="计算机科学与技术"></constructor-arg>
         <constructor-arg name="tuition" value="26000"></constructor-arg>
@@ -35,7 +34,7 @@
     </bean>
 
 
-    <bean id="major2" class="cn.edu.seig.Major">
+    <bean id="major2" class="cn.edu.seig.Major" >
         <constructor-arg name="majorId" value="06"/>
         <constructor-arg name="majorName" value="物联网工程"></constructor-arg>
         <constructor-arg name="deptId" value="407"></constructor-arg>
@@ -50,8 +49,9 @@
 
 
 
+
     <!--4.两种方式混合使用，注入班级的信息-->
-    <bean id="c" class="cn.edu.seig.Class">
+    <bean id="c" class="cn.edu.seig.Class" >
         <!--（1）以Setter方式注入班级的编号、名称、人数和剩余人数信息-->
         <property name="classId" value="10"></property>
         <property name="className" value="web4"></property>
@@ -64,8 +64,8 @@
         <!--循环依赖问题 -->
 <!--       <constructor-arg name="major" ref="major1"></constructor-arg>-->
 <!--       <constructor-arg name="dept" ref="dept"></constructor-arg>-->
-
         <!--注入Properties集合的指导老师和辅导员信息-->
+
         <constructor-arg name="teacherProp" >
             <props >
                 <prop key="tutorId">学习导师Id</prop>
