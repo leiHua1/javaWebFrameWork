@@ -9,6 +9,7 @@
         <module name="lab02" />
         <module name="springDemo01" />
         <module name="lab01" />
+        <module name="lab05" />
         <module name="lab04" />
         <module name="lab03" />
       </profile>
@@ -18,6 +19,7 @@
       <module name="lab02" target="1.8" />
       <module name="lab03" target="1.8" />
       <module name="lab04" target="1.5" />
+      <module name="lab05" target="1.8" />
       <module name="springDemo01" target="1.5" />
       <module name="test" target="1.8" />
       <module name="test02" target="1.8" />

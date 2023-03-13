@@ -1,0 +1,12 @@
+cn\edu\seig\pojo\Freshman.class
+cn\edu\seig\mapper\FreshmanSqlProvider$1.class
+cn\edu\seig\mapper\FreshmanSqlProvider.class
+cn\edu\seig\service\impl\FreshmanServiceImpl.class
+cn\edu\seig\service\FreshmanService.class
+cn\edu\seig\mapper\FreshmanSqlProvider$6.class
+cn\edu\seig\mapper\FreshmanSqlProvider$2.class
+cn\edu\seig\mapper\FreshmanSqlProvider$3.class
+cn\edu\seig\mapper\FreshmanSqlProvider$5.class
+cn\edu\seig\mapper\FreshmanMapper.class
+cn\edu\seig\utils\MybatisUtils.class
+cn\edu\seig\mapper\FreshmanSqlProvider$4.class
