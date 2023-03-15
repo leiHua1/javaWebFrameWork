@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+	<!-- 开启AspectJ -->
+
+	<!-- 定义目标类 -->
+
+	<!-- 定义通知 -->
+
+
+	<!-- AOP原有配置情况，仅作参考，运行时请删除 -->
+<!--   <aop:config>-->
+<!--		<aop:pointcut expression="execution(* cn.edu.seig.spring.service.*.*(..))"-->
+<!--			id="myCut" />-->
+<!--		<aop:aspect ref="myAspect">-->
+<!--			&lt;!&ndash; 前置通知 &ndash;&gt;-->
+<!--			<aop:before method="beforeDo" pointcut-ref="myCut"/>-->
+<!--			&lt;!&ndash; 后置通知 &ndash;&gt;-->
+<!--			<aop:after-returning method="returnDo" pointcut-ref="myCut"/>-->
+<!--			&lt;!&ndash; 最终通知 &ndash;&gt;-->
+<!--			<aop:after method="afterDo" pointcut-ref="myCut"/>-->
+<!--			&lt;!&ndash; 异常通知 &ndash;&gt;-->
+<!--			<aop:after-throwing method="exceptionDo" pointcut-ref="myCut"/>-->
+<!--			&lt;!&ndash; 环绕通知 &ndash;&gt;-->
+<!--			<aop:around method="aroundDo" pointcut-ref="myCut"/>			-->
+<!--		</aop:aspect>-->
+<!--	</aop:config>-->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	<context:component-scan base-package="cn.edu.seig.spring.aspectJ">
+		<context:include-filter type="annotation" expression="org.aspectj.lang.annotation.Aspect"/>
+	</context:component-scan>
+	<bean id="studentService" class="cn.edu.seig.spring.service.impl.StudentServiceImpl"></bean>
+
+</beans>
