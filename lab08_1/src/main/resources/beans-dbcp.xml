@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <context:component-scan base-package="personal.leihua.dao"/>
+
+    <!-- 引入dbc.properties属性文件 -->
+    <context:property-placeholder location="dbcp.properties"></context:property-placeholder>
+
+    <!--配置数据源-->
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${driverClassName}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${name}"/>
+        <property name="password" value="${password}"/>
+    </bean>
+
+    <!-- 2配置Jdbc模板 -->
+    <bean id="jdbcTemplate"
+          class="org.springframework.jdbc.core.JdbcTemplate">
+        <!-- 默认必须使用数据源 -->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+</beans>

@@ -5,6 +5,7 @@
     <file type="web" url="file://$PROJECT_DIR$/lab02" />
     <file type="web" url="file://$PROJECT_DIR$/lab03" />
     <file type="web" url="file://$PROJECT_DIR$/lab05" />
+    <file type="web" url="file://$PROJECT_DIR$/lab08_1" />
     <file type="web" url="file://$PROJECT_DIR$/test" />
     <file type="web" url="file://$PROJECT_DIR$/test02" />
   </component>
@@ -18,6 +19,11 @@
         <option value="$PROJECT_DIR$/lab03/pom.xml" />
         <option value="$PROJECT_DIR$/../../../专业课课件/java/javaweb框架/第4讲 Spring中的Bean（2）/实验4 Spring中的Bean（2）/lab04/pom.xml" />
         <option value="$PROJECT_DIR$/lab05/pom.xml" />
+        <option value="$PROJECT_DIR$/lab06_1/pom.xml" />
+        <option value="$PROJECT_DIR$/lab06_2/pom.xml" />
+        <option value="$PROJECT_DIR$/lab06_3/pom.xml" />
+        <option value="$PROJECT_DIR$/lab07/pom.xml" />
+        <option value="$PROJECT_DIR$/lab08_1/pom.xml" />
       </list>
     </option>
   </component>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- 定义数据源Bean，使用C3P0数据源实现 -->
+   <!-- <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        &lt;!&ndash; 指定连接数据库的驱动 &ndash;&gt;
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        &lt;!&ndash; 指定连接数据库的URL &ndash;&gt;
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3366/spring"/>
+        &lt;!&ndash; 指定连接数据库的用户名 &ndash;&gt;
+        <property name="user" value="wjl"/>
+        &lt;!&ndash; 指定连接数据库的密码 &ndash;&gt;
+        <property name="password" value="root"/>
+        &lt;!&ndash; 指定连接数据库连接池的最大连接数 &ndash;&gt;
+        <property name="maxPoolSize" value="200"/>
+        &lt;!&ndash; 指定连接数据库连接池的最小连接数 &ndash;&gt;
+        <property name="minPoolSize" value="2"/>
+        &lt;!&ndash; 指定连接数据库连接池的初始连接数 &ndash;&gt;
+        <property name="initialPoolSize" value="2"/>
+        &lt;!&ndash; 指定连接数据库连接池的连接的最大空闲时间 &ndash;&gt;
+        <property name="maxIdleTime" value="200"/>
+    </bean>-->
+
+    <!-- 方式2：读配置文件的方式引用属性：  -->
+   <context:property-placeholder location="c3p0/c3p0.properties"></context:property-placeholder>
+    <!-- 1配置数据源 -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="${driverClass}"/>
+        <property name="jdbcUrl" value="${url}"/>
+        <property name="user" value="${user}"/>
+        <property name="password" value="${password}"/>
+    </bean>
+
+    <!-- 2配置Jdbc模板 -->
+    <bean id="jdbcTemplate"
+          class="org.springframework.jdbc.core.JdbcTemplate">
+        <!-- 默认必须使用数据源 -->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!--将jdbcTemplate对象注入到userDao实现类中 -->
+  <context:component-scan base-package="personal.leihua.dao"></context:component-scan>
+</beans>

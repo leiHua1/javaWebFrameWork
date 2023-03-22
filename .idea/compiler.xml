@@ -9,6 +9,11 @@
         <module name="lab02" />
         <module name="springDemo01" />
         <module name="lab01" />
+        <module name="lab06_2" />
+        <module name="lab06_3" />
+        <module name="lab08_1" />
+        <module name="lab06_1" />
+        <module name="lab07" />
         <module name="lab05" />
         <module name="lab04" />
         <module name="lab03" />
@@ -20,6 +25,11 @@
       <module name="lab03" target="1.8" />
       <module name="lab04" target="1.5" />
       <module name="lab05" target="1.8" />
+      <module name="lab06_1" target="1.5" />
+      <module name="lab06_2" target="1.5" />
+      <module name="lab06_3" target="1.5" />
+      <module name="lab07" target="8" />
+      <module name="lab08_1" target="1.8" />
       <module name="springDemo01" target="1.5" />
       <module name="test" target="1.8" />
       <module name="test02" target="1.8" />
