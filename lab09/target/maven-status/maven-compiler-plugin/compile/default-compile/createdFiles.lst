@@ -1,0 +1,8 @@
+cn\edu\seig\dao\ClassDao.class
+cn\edu\seig\service\impl\ClassServiceImpl.class
+cn\edu\seig\pojo\Class.class
+cn\edu\seig\service\ClassService.class
+cn\edu\seig\pojo\Major.class
+cn\edu\seig\dao\impl\ClassDaoImpl.class
+cn\edu\seig\pojo\Teacher.class
+cn\edu\seig\pojo\Dept.class
