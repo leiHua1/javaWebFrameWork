@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace 与 接口的全类名一致-->
+<mapper namespace="cn.edu.seig.mapper.MajorMapper">
+
+    <insert id="addMajor" parameterType="cn.edu.seig.pojo.Major">
+        insert into tb_major values(#{majorId},#{majorName},#{tuition},#{deptId})
+    </insert>
+    <update id="updateMajor" parameterType="cn.edu.seig.pojo.Major">
+        update tb_major set major_name=#{majorName},tuition=#{tuition},dept_id=#{deptId} where major_id=#{majorId}
+    </update>
+    <delete id="deleteMajorById" parameterType="string">
+        delete  from tb_major  where  major_id=#{major_id}
+     </delete>
+    <select id="findMajorById" parameterType="String" resultType="cn.edu.seig.pojo.Major">
+        select  * from tb_major where major_id=#{major_id}
+    </select>
+    <select id="findAllMajor" resultType="cn.edu.seig.pojo.Major">
+        select * from tb_major
+    </select>
+
+</mapper>
