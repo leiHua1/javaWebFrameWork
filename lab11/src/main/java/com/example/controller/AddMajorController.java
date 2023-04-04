@@ -7,6 +7,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
+// la11_01
 @WebServlet(name = "AddMajorController", value = "/major_add")
 public class AddMajorController extends HttpServlet {
     @Override

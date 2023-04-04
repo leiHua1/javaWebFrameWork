@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="
-        http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- 配置Handle，映射"/firstController"请求 -->
     <bean name="/firstController" class="com.example.controller.AddMajorController"/>
@@ -18,7 +18,15 @@
     <!-- 处理器映射器将bean的name作为url进行查找，需要在配置Handle时指定name(即url) -->
     <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"></bean>
 
-    <!-- 视图解析器 -->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"/>
 
+    <!-- 配置视图解析器   internal：内部的   viewResolver:视图解析器    -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--配置 路径前缀:  /admin/的意思是在    webapp目录下的 admin下的资源    -->
+        <property name="prefix" value="/"></property>
+        <!--配置后缀：  文件后缀的格式名        -->
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+    <!--    注解驱动-->
+    <mvc:annotation-driven></mvc:annotation-driven>
+    <context:component-scan base-package="com.example.annocationController"></context:component-scan>
 </beans>
