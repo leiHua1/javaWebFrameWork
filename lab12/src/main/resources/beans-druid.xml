@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--  <bean id="majorDao" class="com.example.dao.impl.MajorDaoImpl"></bean>-->
+  <context:component-scan base-package="com.example.dao.impl"></context:component-scan>
+  <!-- 数据源配置 -->
+  <context:property-placeholder location="classpath:druid.properties"></context:property-placeholder>
+  <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+    <!-- 数据源驱动类可不写，Druid默认会自动根据URL识别DriverClass -->
+    <property name="driverClassName" value="${driverClassName}" />
+    <!-- 基本属性 url、user、password -->
+    <property name="url" value="${url}"/>
+    <property name="username" value="${name}"/>
+    <property name="password" value="${password}"/>
+    <!-- 初始化连接大小 -->
+    <property name="initialSize" value="1"/>
+    <!-- 连接池最大使用连接数量 -->
+    <property name="maxActive" value="10"/>
+    <!-- 连接池最小空闲 -->
+    <property name="minIdle" value="1"/>
+    <!-- 获取连接最大等待时间 -->
+    <property name="maxWait" value="10000"/>
+    <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+    <property name="timeBetweenEvictionRunsMillis" value="60000" />
+    <!-- 配置监控统计拦截的filters，去掉后监控界面sql无法统计 -->
+    <property name="filters" value="stat" />
+    <!--监控SQL语句-->
+    <property name="proxyFilters">
+      <list>
+        <ref bean="stat-filter"/>
+      </list>
+    </property>
+  </bean>
+  <!--SQL监控-->
+  <bean id="stat-filter" class="com.alibaba.druid.filter.stat.StatFilter">
+    <!--慢SQL记录 缺省值为3000，也就是3秒-->
+    <property name="slowSqlMillis" value="5000"/>
+    <property name="logSlowSql" value="true"/>
+    <!--SQL合并配置-->
+    <property name="mergeSql" value="true"/>
+  </bean>
+
+  <!-- 2配置Jdbc模板 -->
+  <bean id="jdbcTemplate"
+        class="org.springframework.jdbc.core.JdbcTemplate">
+    <!-- 默认必须使用数据源 -->
+    <property name="dataSource" ref="dataSource"/>
+  </bean>
+</beans>
