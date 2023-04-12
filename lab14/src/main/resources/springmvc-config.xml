@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+<context:property-placeholder location="classpath:druid.properties"/>
+    <context:component-scan base-package="cn.edu.seig"/>
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${driverClassName}"/>
+        <property name="username" value="${name}"/>
+        <property name="url"  value="${url}"/>
+        <property name="password"  value="${password}"/>
+    </bean>
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+<!--    <mvc:default-servlet-handler/>
+    <mvc:annotation-driven/>-->
+    <!--  mybatis-->
+    <bean id="sessionFactory"  class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="mapperLocations" value="classpath:mapper/*.xml"></property>
+        <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+    </bean>
+<!--    扫描-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="cn.edu.seig.mapper"></property>
+    </bean>
+    <mvc:annotation-driven/>
+</beans>
